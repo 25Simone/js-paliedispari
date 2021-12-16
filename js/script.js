@@ -1,9 +1,6 @@
 // dichiaro la variabile collegata all'html
 const output1Html = document.querySelector('.output1');
 
-// chiedo all'utente di inserire una parola
-const userWord = prompt('Inserisci una parola per verificare se è palindroma');
-
 // definisco la funzione per verificare se la parola è palindroma
 function checkPalindrome(word) {
     let invertedWord = '';
@@ -18,9 +15,15 @@ function checkPalindrome(word) {
     }
     return result;
 }
+// chiedo all'utente di inserire una parola
+const userWord = prompt('Inserisci una parola per verificare se è palindroma');
+if (userWord.length === 0) {
+    output1Html.innerHTML = 'Non è stata inserita alcuna parola'
+} else {
+    let palindromeValidation = checkPalindrome(userWord);
+    output1Html.innerHTML += `La parola ${userWord} ${palindromeValidation}`;
+}
 
-let palindromeValidation = checkPalindrome(userWord);
-output1Html.innerHTML += `La parola ${userWord} ${palindromeValidation}`;
 
 // ----------------------------------------------------------------
 
@@ -74,18 +77,18 @@ if (userNum < 1 || userNum > 5) {
         pari = true;
         score = checkPariOrDispari(sum);
         if (numeroIsPari) {
-            console.log('Vince il giocatore')
+            scoreOutput.innerHTML = 'Vince il giocatore';
         } else if(numeroIsDispari){
-            console.log('Vince il computer')
+            scoreOutput.innerHTML = 'Vince il computer';
         }
     })
     buttonDispari.addEventListener ('click', function() {
         dispari = true;
         score = checkPariOrDispari(sum);
         if (numeroIsDispari) {
-            console.log('Vince il giocatore')
+            scoreOutput.innerHTML = 'Vince il giocatore';
         } else if (numeroIsPari) {
-            console.log('Vince il computer')
+            scoreOutput.innerHTML = 'Vince il computer';
         }
     })
 }
