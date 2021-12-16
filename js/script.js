@@ -1,5 +1,5 @@
 // dichiaro la variabile collegata all'html
-const outputHtml = document.querySelector('.output');
+const output1Html = document.querySelector('.output1');
 
 // chiedo all'utente di inserire una parola
 const userWord = prompt('Inserisci una parola per verificare se è palindroma');
@@ -20,12 +20,13 @@ function checkPalindrome(word) {
 }
 
 let palindromeValidation = checkPalindrome(userWord);
-outputHtml.innerHTML += `La parola ${userWord} ${palindromeValidation}`;
+output1Html.innerHTML += `La parola ${userWord} ${palindromeValidation}`;
 
 // ----------------------------------------------------------------
-let num;
-let sum = 0;
-let score;
+
+// dichiaro la variabile di collegamento al codice html
+const output2Html = document.querySelector('.output2');
+const scoreOutput = document.getElementById('score');
 
 // dichiaro le variabili dei bottoni
 const buttonPari = document.getElementById('button-pari');
@@ -36,6 +37,10 @@ let pari = false;
 let dispari = false;
 let numeroIsPari = false;
 let numeroIsDispari = false;
+
+let num;
+let sum = 0;
+let score;
 
 // funzioni
 function randomNumber (min, max) {
@@ -52,10 +57,11 @@ function checkPariOrDispari() {
 
 // chiedo all'utente un numero da 1 a 5
 userNum = parseInt(prompt('inserisci un numero da 1 a 5'));
+output2Html.innerHTML += `Il tuo numero é ${userNum}`;
 
 // check numero da 1 a 5
 if (userNum < 1 || userNum > 5) {
-    console.log('Ho chiesto un numero da 1 a 5')
+    output2Html.innerHTML += '<br/>Ho chiesto un numero da 1 a 5';
 } else {
     // estraggo un numero random da 1 a 5 per il computer
     numComputer = parseInt(randomNumber(1, 5));
@@ -67,23 +73,19 @@ if (userNum < 1 || userNum > 5) {
     buttonPari.addEventListener ('click', function() {
         pari = true;
         score = checkPariOrDispari(sum);
-        if (numeroPari) {
+        if (numeroIsPari) {
             console.log('Vince il giocatore')
-        } else if(numeroDispari){
+        } else if(numeroIsDispari){
             console.log('Vince il computer')
         }
     })
     buttonDispari.addEventListener ('click', function() {
         dispari = true;
         score = checkPariOrDispari(sum);
-        if (numeroDispari) {
+        if (numeroIsDispari) {
             console.log('Vince il giocatore')
-        } else if (numeroPari) {
+        } else if (numeroIsPari) {
             console.log('Vince il computer')
         }
     })
-    
-    console.log(userNum);
-    console.log(numComputer);
-    console.log(sum);
 }

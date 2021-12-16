@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #083b4c;
+}
+.title{
+    text-align: center;
+    color: #fff;
+    font-size: 35px;
+    margin: 20px 0;
+}
+.output1{
+    margin: 30px auto;
+    text-align: center;
+    border: 1px solid #fff;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 25px;
+    width: 500px;
+    height: 60px;
+    line-height: 60px;
+}
+.output2{
+    color: #fff;
+    text-align: center;
+}
+.container{
+    margin: 30px auto;
+    border: 1px solid #fff;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 25px;
+    width: 500px;
+}
+.row{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+#score{
+    color: maroon;
+    font-size: 30px;
+    text-align: center;
+}
